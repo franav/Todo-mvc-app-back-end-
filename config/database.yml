@@ -1,0 +1,24 @@
+default: &default  
+  adapter: postgresql  
+  encoding: unicode  
+
+
+test:
+  <<: *default  
+  database: app_name_test
+  username: postgres  
+  password:  
+  pool: 5  
+  host: db 
+
+development: 
+  <<: *default  
+  database: naturlax-static_db
+  username: postgres  
+  password:  
+  pool: 5  
+  host: db 
+
+
+
+#docker exec -u postgres 382622e99504 pg_dump -Fc naturlax-static_db > db.dump
